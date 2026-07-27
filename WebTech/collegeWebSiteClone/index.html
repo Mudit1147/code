@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABES Engineering College | Home</title>
+  <style>
+    /* --- CSS RESET & BASE STYLES --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- HEADER & NAVIGATION --- */
+    header {
+      background-color: #0b1f3a;
+      color: #ffffff;
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      background-color: #800000;
+      color: #ffffff;
+      font-weight: bold;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 2px solid #ffd700;
+      text-align: center;
+    }
+
+    .logo-title h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-title p {
+      font-size: 0.8rem;
+      color: #ffd700;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+
+    .btn-apply {
+      background-color: #28a745;
+      color: #ffffff !important;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .btn-apply:hover {
+      background-color: #218838;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      background: linear-gradient(rgba(11, 31, 58, 0.85), rgba(11, 31, 58, 0.85)),
+                  url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 100px 5% 80px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero tag {
+      background-color: #800000;
+      color: #ffffff;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+
+    /* --- STATS SECTION --- */
+    .stats-container {
+      max-width: 1200px;
+      margin: -40px auto 50px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stat-card {
+      background: #ffffff;
+      padding: 25px 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-bottom: 4px solid #800000;
+    }
+
+    .stat-card h3 {
+      font-size: 1.8rem;
+      color: #800000;
+      margin-bottom: 5px;
+    }
+
+    .stat-card p {
+      font-size: 0.9rem;
+      color: #666666;
+      font-weight: 600;
+    }
+
+    /* --- SECTION LAYOUTS --- */
+    .section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #0b1f3a;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #666666;
+      margin-bottom: 40px;
+    }
+
+    /* --- COURSES SECTION --- */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .course-card {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9ecef;
+      transition: transform 0.3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card h4 {
+      font-size: 1.2rem;
+      color: #0b1f3a;
+      margin-bottom: 10px;
+    }
+
+    .course-card ul {
+      list-style: none;
+    }
+
+    .course-card li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f1f1;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+    }
+
+    .course-card li:last-child {
+      border-bottom: none;
+    }
+
+    .seats-badge {
+      background-color: #e9ecef;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      color: #495057;
+      font-weight: bold;
+    }
+
+    /* --- PLACEMENT HIGHLIGHTS --- */
+    .placement-banner {
+      background: #0b1f3a;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .placement-item h3 {
+      font-size: 2.2rem;
+      color: #ffd700;
+      margin-bottom: 5px;
+    }
+
+    .placement-item p {
+      font-size: 0.95rem;
+      color: #dcdcdc;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background-color: #061224;
+      color: #a0aab8;
+      padding: 50px 5% 20px;
+      margin-top: 80px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 40px;
+      height: 2px;
+      background-color: #800000;
+    }
+
+    .footer-col p, .footer-col li {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid #1a2a40;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Hide on mobile for simplicity */
+      }
+      
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo-container">
+        <div class="logo-badge">ABES</div>
+        <div class="logo-title">
+          <h1>ABES Engineering College</h1>
+          <p>Autonomous College since 2025</p>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#placements">Placements</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="btn-apply">Apply Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <tag>Est. 2000 &bull; 26 Years of Excellence</tag>
+      <h2>Pioneering Outcome-Focused Technical Education</h2>
+      <p>"We pledge to position India as a Vishwa Guru in AI, leading innovation, ethics, and education."</p>
+    </div>
+  </section>
+
+  <!-- STATS OVERLAY SECTION -->
+  <div class="stats-container">
+    <div class="stat-card">
+      <h3>8090+</h3>
+      <p>Campus Students</p>
+    </div>
+    <div class="stat-card">
+      <h3>60 LPA</h3>
+      <p>Highest Package</p>
+    </div>
+    <div class="stat-card">
+      <h3>24,000+</h3>
+      <p>Global Alumni</p>
+    </div>
+    <div class="stat-card">
+      <h3>500+</h3>
+      <p>Top Recruiters</p>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="section" id="about">
+    <h2 class="section-title">Welcome to ABES</h2>
+    <p class="section-subtitle">Recognized among the best engineering colleges in Delhi NCR</p>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #555;">
+      At ABES Engineering College, we ignite the flames of curiosity, knowledge, and innovation. Established over two decades ago under the Society for Educational Excellence, our institution has evolved into a dynamic center of learning nestled in Ghaziabad, providing NBA-accredited high-quality technical programs.
+    </p>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section class="section" id="courses">
+    <h2 class="section-title">Programs Offered</h2>
+    <p class="section-subtitle">Industry-aligned curriculum tailored for practical skills</p>
+    
+    <div class="courses-grid">
+      <div class="course-card">
+        <h4>B.Tech Programs</h4>
+        <ul>
+          <li>Computer Science & Engg. <span class="seats-badge">900 Seats</span></li>
+          <li>CSE (AI & ML) <span class="seats-badge">360 Seats</span></li>
+          <li>CSE (Data Science) <span class="seats-badge">180 Seats</span></li>
+          <li>Electronics & Comm. Engg. <span class="seats-badge">180 Seats</span></li>
+          <li>Electrical & Computer Engg. <span class="seats-badge">120 Seats</span></li>
+        </ul>
+      </div>
+
+      <div class="course-card">
+        <h4>Postgraduate & Applications</h4>
+        <ul>
+          <li>Master of Computer Applications (MCA)</li>
+          <li>Bachelor of Computer Applications (BCA) <span class="seats-badge">120 Seats</span></li>
+          <li>M.Tech Courses</li>
+        </ul>
+      </div>
+
+      <div class="course-card">
+        <h4>Working Professionals</h4>
+        <ul>
+          <li>B.Tech CSE (Flexible) <span class="seats-badge">30 Seats</span></li>
+          <li>B.Tech ECE (Flexible) <span class="seats-badge">30 Seats</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACEMENTS SECTION -->
+  <section class="section" id="placements">
+    <h2 class="section-title">Placement Highlights</h2>
+    <p class="section-subtitle">Consistent records across leading global IT & Engineering firms</p>
+    
+    <div class="placement-banner">
+      <div class="placement-item">
+        <h3>1,870+</h3>
+        <p>Total Placement Offers</p>
+      </div>
+      <div class="placement-item">
+        <h3>80.06%</h3>
+        <p>Placement Percentage</p>
+      </div>
+      <div class="placement-item">
+        <h3>89</h3>
+        <p>Super Dream Offers (10+ LPA)</p>
+      </div>
+      <div class="placement-item">
+        <h3>270</h3>
+        <p>Dream Offers (7-9 LPA)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p>19th KM Stone, NH-09</p>
+        <p>Ghaziabad, Uttar Pradesh - 201009</p>
+        <p>Phone: 01207135112</p>
+        <p>Email: info@abes.ac.in</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Academic Calendar</a></li>
+          <li><a href="#">AICTE Approval</a></li>
+          <li><a href="#">Mandatory Disclosures</a></li>
+          <li><a href="#">Admissions 2026</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Campus & Culture</h4>
+        <ul>
+          <li><a href="#">Clubs & Societies</a></li>
+          <li><a href="#">TEDx ABESEC</a></li>
+          <li><a href="#">Hostel Life</a></li>
+          <li><a href="#">Research & Patents</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 ABES Engineering College. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
