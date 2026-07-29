@@ -1,0 +1,28 @@
+/* .a{
+    opacity:1;
+    width: auto;
+    height: auto;
+} */
+.b{
+    align-items: center;
+    display: flex;
+    background-color:#000;
+    height: 10px;
+    width: 100%;
+
+}
+nav ul{
+    display:flex;
+    margin:0;
+    padding:0;
+    gap:20px;
+    list-style:none;
+}
+nav a{
+    color:aliceblue;
+    text-decoration: none;
+}
+.c{
+    height:50px;
+    width:200px;
+}
