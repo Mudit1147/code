@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        document.getElementById("studentform").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var dob = document.getElementById("dob").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var course = document.getElementById("course").value;
+            
+            // Validation
+            if (!name || !email || !phone || !dob || !gender || !course) {
+                alert("Please fill in all fields!");
+                return;
+            }
+            
+            // Phone validation (10 digits)
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Phone number must be 10 digits!");
+                return;
+            }
+            
+            // Email validation
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Please enter a valid email address!");
+                return;
+            }
+            
+            alert("Form submitted successfully!");
+        });
+    </script>
+    
+<body>
+    <!-- design registration form using html, and css and validate form using javascript before submitting the form to server -->
+
+    <h1>STUDENT DETAILS FORM</h1>
+    <form id="studentform">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label> 
+        <input type="email" id="email" name="email" required><br><br>  
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required> Male
+        <input type="radio" id="female" name="gender" value="female" required> Female<br><br>
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="">Select a course</option>
+            <option value="computer_science">Computer Science</option>
+            <option value="mathematics">Mathematics</option>
+            <option value="physics">Physics</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html> 
